@@ -1,6 +1,9 @@
 package com.stepdefinitions;
 
 import com.pages.LoginPage;
+
+import org.junit.Assert;
+
 import com.pages.AccountPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -34,6 +37,7 @@ public class LoginSteps {
 
     @Then("I should see a popup with error message {string}")
     public void iShouldSeeAPopupWithErrorMessage(String errorMessage) {
-
+        String actualAlertText = loginPage.getAlertText();
+        Assert.assertEquals(errorMessage, actualAlertText);
     }
 }

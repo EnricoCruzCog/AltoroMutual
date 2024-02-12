@@ -1,8 +1,8 @@
 package com.pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 
 public class LoginPage {
 
@@ -27,6 +27,11 @@ public class LoginPage {
         driver.findElement(By.id(usernameField)).sendKeys(username);
         driver.findElement(By.id(passwordField)).sendKeys(password);
         driver.findElement(By.name(loginButton)).click();
+    }
+
+    public String getAlertText() {
+        Alert alert = driver.switchTo().alert();
+        return alert.getText();
     }
 
 }
