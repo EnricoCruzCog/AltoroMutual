@@ -1,7 +1,7 @@
 Feature: Login
 
   Background: Access altoromutual url
-    Given I access the altoromutual url
+    Given I access the Altoro Mutual URL
   
   Scenario: Login with valid credentials
     When I login with username "jsmith" and password "Demo1234"
@@ -21,4 +21,4 @@ Feature: Login
 
   Scenario: Try to login with valid password and empty username
     When I login with username "" and password "Demo1234"
-    Then I should see a popup with error message "You must enter a valid username" 
+    Then I should see a popup with error message "You must enter a valid username"
