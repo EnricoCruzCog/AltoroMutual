@@ -1,5 +1,6 @@
 package com.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,7 @@ public class LoginPage {
     private static String usernameField = "uid";
     private static String passwordField = "passw";
     private static String loginButton = "btnSubmit";
+    private static String txtErrorMsg = "_ctl0__ctl0_Content_Main_message";
 
     public LoginPage(WebDriver driver) { this.driver = driver; }
 
@@ -28,5 +30,11 @@ public class LoginPage {
         driver.findElement(By.id(passwordField)).sendKeys(password);
         driver.findElement(By.name(loginButton)).click();
     }
+      
+    public void validInvalidLogin() {
+        String errorMsg = driver.findElement(By.id(txtErrorMsg)).getText();
+        Assert.assertEquals(errorMsg, "Login Failed: We're sorry, but this username or password was not found in our system. Please try again.");
+    }
+    
 
 }

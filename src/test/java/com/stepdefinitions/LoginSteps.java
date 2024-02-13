@@ -29,7 +29,7 @@ public class LoginSteps {
 
     @Then("I should see login failed error")
     public void iShouldSeeLoginFailedError() {
-
+        loginPage.validInvalidLogin();
     }
 
     @Then("I should see a popup with error message {string}")
