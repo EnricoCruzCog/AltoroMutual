@@ -1,7 +1,7 @@
 Feature: Login
 
   Background: Access altoromutual url
-    Given I access the altoromutual url
+    Given I access the Altoro Mutual URL
   
   Scenario: Login with valid credentials
     When I login with username "jsmith" and password "Demo1234"
