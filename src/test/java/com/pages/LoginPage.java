@@ -15,11 +15,11 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) { this.driver = driver; }
 
-    public void accessAltoromutualURL() {
+    public void accessAltoroMutualURL() {
         driver.get("https://demo.testfire.net/");
     }
 
-    public void clickSignInLink() {
+    public void enterLoginPage() {
         driver.findElement(By.id(signInLink)).click();
     }
     
