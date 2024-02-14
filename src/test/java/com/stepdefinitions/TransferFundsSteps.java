@@ -32,9 +32,7 @@ public class TransferFundsSteps {
     }
 
     @Then("the confirmation message should be displayed {string}")
-    public void theConfirmationMessageShouldBeDisplayed(String expectedConfirmationMessage) throws InterruptedException {
-        Thread.sleep(4000);
+    public void theConfirmationMessageShouldBeDisplayed(String expectedConfirmationMessage) {
         Assert.assertTrue(transferFundsPage.getConfirmationMessage().contains(expectedConfirmationMessage));
     }
-
 }
