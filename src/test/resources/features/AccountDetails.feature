@@ -1,8 +1,9 @@
 Feature: AccountDetails
 
   Background: Access Account Details in the Altoro Mutual
-    Given I access the Altoro Mutual URL with valid credentials
-  
+    Given I access the Altoro Mutual URL
+    When I login with username "jsmith" and password "Demo1234"
+      
   Scenario: Access Account Details "800002 Savings"
     When I select the Account Type "800002 Savings"
     Then I should be in "800002 Savings" Account Details Page
