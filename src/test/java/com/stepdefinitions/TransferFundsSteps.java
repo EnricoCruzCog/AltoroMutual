@@ -21,7 +21,7 @@ public class TransferFundsSteps {
         transferFundsPage.selectAccounts(fromAccount, toAccount);
     }
 
-    @When("I type a valid amount to transfer of {string}")
+    @When("I type a amount to transfer of {string}")
     public void iTypeAValidAmount(String amountToTransfer) {
         transferFundsPage.typeTheAmountToTransfer(amountToTransfer);
     }
