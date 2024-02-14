@@ -35,4 +35,10 @@ public class TransferFundsSteps {
     public void theConfirmationMessageShouldBeDisplayed(String expectedConfirmationMessage) {
         Assert.assertTrue(transferFundsPage.getConfirmationMessage().contains(expectedConfirmationMessage));
     }
+
+    @Then("a pop-up should display with the message {string}")
+    public void a_pop_up_should_display_with_the_message(String expectedAlertMessage) {
+        String actualAlertText = transferFundsPage.getAlertText();
+        Assert.assertEquals(expectedAlertMessage, actualAlertText);
+    }
 }

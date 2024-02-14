@@ -1,5 +1,6 @@
 package com.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -45,6 +46,11 @@ public class TransferFundsPage {
     
     public String getConfirmationMessage() {
         return driver.findElement(By.id(transferConfirmationText)).getText();
+    }
+
+    public String getAlertText() {
+        Alert alert = driver.switchTo().alert();
+        return alert.getText();
     }
 
 }

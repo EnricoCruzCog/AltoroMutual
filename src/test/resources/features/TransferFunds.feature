@@ -10,3 +10,9 @@ Feature: Transfer Funds
         And I type a valid amount to transfer of "1500"
         And click on Transfer Money button
         Then the confirmation message should be displayed "1500.0 was successfully transferred from Account 800003 into Account 800002"
+
+    Scenario: Invalid transfer between same accounts
+        When I select a from account "800003" and a to Account "800003"
+        And I type a valid amount to transfer of "1500"
+        And click on Transfer Money button
+        Then a pop-up should display with the message "From ccount and To Account fields cannot be the same."
