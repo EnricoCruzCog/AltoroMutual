@@ -5,23 +5,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 public class AccountDetailsPage {
 
     WebDriver driver;
-    WebDriverWait wait;
-
-    private static String hereLink = "//a[@href='apply.jsp']";
-    private static String passwordName = "passwd";
-    private static String accountField = "listAccounts";
-    private static String buttonGo = "//*[@id=\"btnGetAccount\"]";
-    private static String buttonSubmit = "Submit";
-    private static String msgError = "_ctl0__ctl0_Content_Main_message";
-    private static String labelAccountHistory = "body > table:nth-child(4) > tbody > tr > td:nth-child(2) > div > h1";
 
     public AccountDetailsPage(WebDriver driver) { this.driver = driver; }
+
+    private String hereLink = "//a[@href='apply.jsp']";
+    private String passwordName = "passwd";
+    private String accountField = "listAccounts";
+    private String buttonGo = "//*[@id=\"btnGetAccount\"]";
+    private String buttonSubmit = "Submit";
+    private String msgError = "_ctl0__ctl0_Content_Main_message";
+    private String labelAccountHistory = "h1";
+
+
    
-    public void accessLink () {
+    public void accessHereLink () {
         driver.findElement(By.xpath(hereLink)).click();
     }
 
@@ -35,8 +35,9 @@ public class AccountDetailsPage {
         driver.findElement(By.xpath(buttonGo)).click();
     }
 
-    public void validAccountDetailsPage () {
-        Assert.assertTrue(driver.findElement(By.cssSelector(labelAccountHistory)).isDisplayed());
+    public void validAccountDetailsPage (String accountNumber) {
+        String actualMessage = driver.findElement(By.tagName(labelAccountHistory)).getText();
+        Assert.assertTrue(actualMessage.contains(accountNumber));
     }
 
     public void accessApplication (String password) {
