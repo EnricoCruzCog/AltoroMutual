@@ -28,19 +28,19 @@ public class LoginSteps {
     @Then("I should be in account page")
     public void iShouldBeInAccountPage() {
         Assert.assertTrue(accountPage.isSignOffLinkDisplayed());
+        Hooks.takeScreenshot("pass", "I should be logged in");
     }
 
     @Then("I should see login failed error")
     public void iShouldSeeLoginFailedError() {
         loginPage.validInvalidLogin();
+        Hooks.takeScreenshot("pass", "I should see login failed error");
     }
 
     @Then("I should see a popup with error message {string}")
-    public void iShouldSeeAPopupWithErrorMessage(String errorMessage) {
+    public void iShouldSeeAPopupWithErrorMessage(String errorMessage) {        
         String actualAlertText = loginPage.getAlertText();
         Assert.assertEquals(errorMessage, actualAlertText);
+        Hooks.takeScreenshot("pass", "I should see a popup with error message: "+errorMessage);
     }
-
-
-
 }
