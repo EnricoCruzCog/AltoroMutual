@@ -24,6 +24,7 @@ public class Hooks {
     public static WebDriver getDriver(){
         return driver;
     }
+    
     @Before
     public void setUp(Scenario scenario) {
         driver = BrowserProvider.createDriver(Browser.CHROME);
