@@ -8,9 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 public class AccountDetailsPage {
 
-    TakesScreenshot screenshot;
-    String screenshotBytes;
-    
     WebDriver driver;
 
     public AccountDetailsPage(WebDriver driver) { this.driver = driver; }
