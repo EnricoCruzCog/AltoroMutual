@@ -50,7 +50,9 @@ public class TransferFundsPage {
 
     public String getAlertText() {
         Alert alert = driver.switchTo().alert();
-        return alert.getText();
+        String alertText = alert.getText();
+        alert.accept();
+        return alertText;
     }
 
 }

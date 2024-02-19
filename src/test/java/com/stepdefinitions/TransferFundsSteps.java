@@ -33,12 +33,14 @@ public class TransferFundsSteps {
 
     @Then("the confirmation message should be displayed {string}")
     public void theConfirmationMessageShouldBeDisplayed(String expectedConfirmationMessage) {
+        Hooks.takeScreenshot("pass", "The confirmation message should be displayed: " + expectedConfirmationMessage);
         Assert.assertTrue(transferFundsPage.getConfirmationMessage().contains(expectedConfirmationMessage));
     }
 
     @Then("a pop-up should display with the message {string}")
-    public void a_pop_up_should_display_with_the_message(String expectedAlertMessage) {
+    public void aPopUpShouldDisplayWithTheMessage(String expectedAlertMessage) {
         String actualAlertText = transferFundsPage.getAlertText();
-        Assert.assertEquals(expectedAlertMessage, actualAlertText);
+        Hooks.takeScreenshot("pass", "A pop-up should display with the message: " + expectedAlertMessage);
+        Assert.assertTrue(expectedAlertMessage.equals(actualAlertText));
     }
 }
