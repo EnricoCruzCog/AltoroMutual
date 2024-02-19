@@ -9,7 +9,7 @@ public class AccountDetailsSteps {
     private final AccountDetailsPage accountDetailsPage = new AccountDetailsPage(Hooks.getDriver());
 
     @When("I select the Account Type {string}")
-    public void I_select_the_Account_Type(String accountOption) {
+    public void I_select_the_Account_Type(String accountOption) throws InterruptedException {
         accountDetailsPage.selectAccountOption(accountOption);
         accountDetailsPage.clickButtonGo();
     }
@@ -17,6 +17,7 @@ public class AccountDetailsSteps {
     @Then("I should be in Account Details Page {string}")
     public void I_should_be_in_Account_Details_Page(String accountNumber) {
         accountDetailsPage.validAccountDetailsPage(accountNumber);
+        Hooks.takeScreenshot("pass", "I should be in Account Details Page {string}");
     }
 
     @When("I login with password {string}")
@@ -25,13 +26,14 @@ public class AccountDetailsSteps {
     }
 
     @When("I click on Here link to apply")
-    public void I_click_on_Here_link_to_apply() {
+    public void I_click_on_Here_link_to_apply() throws InterruptedException {
         accountDetailsPage.accessHereLink();    
     }
 
     @Then("I should see failed error")
-    public void I_should_see_failed_error() {
+    public void I_should_see_failed_error() throws InterruptedException {
         accountDetailsPage.validErrorMessage();
+        Hooks.takeScreenshot("pass", "I should see failed error");
     }
 
     @Then("I should see an application page")
