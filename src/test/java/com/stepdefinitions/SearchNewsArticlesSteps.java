@@ -29,6 +29,7 @@ public class SearchNewsArticlesSteps {
 
     @Then("the corresponding article with the title {string} should be displayed")
     public void theCorrespondingArticleWithTheTitleShouldBeDisplayed(String title) {
+        Hooks.takeScreenshot("pass", "The corresponding article with the title '" + title + "'' should be displayed.");
         Assert.assertTrue(searchNewsArticlesPage.getQueryResults().contains(title));
     }
 }

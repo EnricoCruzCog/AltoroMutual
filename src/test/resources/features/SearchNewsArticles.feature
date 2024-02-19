@@ -1,3 +1,5 @@
+@SearchNewsArticles @Regression
+
 Feature: Search News Articles
 
     Background: Access altoromutual url and access Search News Articles page
@@ -5,6 +7,7 @@ Feature: Search News Articles
         And I login with username "jsmith" and password "Demo1234"
         And I access the Search News Articles page
 
+    @TC-015
     Scenario: Search for existing titles using keywords
         When I type <keyword> on search input field
         And I click on Query button 
