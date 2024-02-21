@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com/stepdefinitions",
-        tags = "@Regression"
+        tags = "@Regression and not @Ignore"
 )
 public class TestRunner {
 

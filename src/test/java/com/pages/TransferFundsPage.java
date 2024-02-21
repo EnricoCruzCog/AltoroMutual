@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.Select;
 public class TransferFundsPage {
 
     private WebDriver driver;
-    private String url = "https://altoro.testfire.net/bank/transfer.jsp";
-    private String transferFundsMenuButton = "MenuHyperLink3";
-    private String fromAccountSelectField = "fromAccount";
-    private String toAccountSelectField = "toAccount";
-    private String transferAmountInput = "transferAmount";
-    private String transferButton = "transfer";
-    private String transferConfirmationText = "_ctl0__ctl0_Content_Main_postResp";
+    private final String url = "https://altoro.testfire.net/bank/transfer.jsp";
+    private final String transferFundsMenuButton = "MenuHyperLink3";
+    private final String fromAccountSelectField = "fromAccount";
+    private final String toAccountSelectField = "toAccount";
+    private final String transferAmountInput = "transferAmount";
+    private final String transferButton = "transfer";
+    private final String transferConfirmationText = "_ctl0__ctl0_Content_Main_postResp";
 
     public TransferFundsPage(WebDriver driver) {
         this.driver = driver;

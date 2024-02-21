@@ -12,6 +12,9 @@ Feature: Transfer Funds
         And I type a amount to transfer of "1500"
         And click on Transfer Money button
         Then the confirmation message should be displayed "1500.0 was successfully transferred from Account 800003 into Account 800002"
+        When I access the View Recent Transactions Page
+        Then I should see a "Withdrawal" operation from account id "800003" with amount of "-$1500.00"
+        And I should see a "Deposit" operation from account id "800002" with amount of "$1500.00"
 
     @TC-013
     Scenario: Invalid transfer between same accounts

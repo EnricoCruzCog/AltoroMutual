@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 public class SearchNewsArticlesPage {
 
     private WebDriver driver;
-    private String searchNewsArticleMenuButton = "MenuHyperLink4";
-    private String queryInputField = "//form/*[@id='query']";
-    private String queryButton = "Button1";
-    private String queryResults = "QueryXpath";
+    private final String searchNewsArticleMenuButton = "MenuHyperLink4";
+    private final String queryInputField = "//form/*[@id='query']";
+    private final String queryButton = "Button1";
+    private final String queryResults = "QueryXpath";
 
     public SearchNewsArticlesPage(WebDriver driver) {
         this.driver = driver;
