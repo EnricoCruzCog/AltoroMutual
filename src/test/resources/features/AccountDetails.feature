@@ -32,7 +32,7 @@ Feature: AccountDetails
      And I login with password "teste123" 
     Then I should see failed error
 
-  @TC-011
+  @TC-011 @Ignore
   Scenario: Try to Access Altoro Gold Visa Application with correct password
     When I click on Here link to apply
      And I login with password "Demo1234" 

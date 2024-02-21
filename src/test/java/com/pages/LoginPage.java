@@ -10,11 +10,11 @@ public class LoginPage {
 
     WebDriver driver;
 
-    private static String signInLink = "LoginLink";
-    private static String usernameField = "uid";
-    private static String passwordField = "passw";
-    private static String loginButton = "btnSubmit";
-    private static String txtErrorMsg = "_ctl0__ctl0_Content_Main_message";
+    private final String signInLink = "LoginLink";
+    private final String usernameField = "uid";
+    private final String passwordField = "passw";
+    private final String loginButton = "btnSubmit";
+    private final String txtErrorMsg = "_ctl0__ctl0_Content_Main_message";
 
     public LoginPage(WebDriver driver) { this.driver = driver; }
 

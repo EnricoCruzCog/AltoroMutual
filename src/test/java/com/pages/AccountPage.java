@@ -7,7 +7,7 @@ public class AccountPage {
 
     WebDriver driver;
 
-    private static String signInLink = "LoginLink";
+    private final String signInLink = "LoginLink";
 
     public AccountPage(WebDriver driver) { this.driver = driver; }
 
